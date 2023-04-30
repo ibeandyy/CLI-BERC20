@@ -15,7 +15,7 @@ task("deployBERC20", "Deploy an BERC20 token contract")
     }
 
     const parsedDecimals = parseInt(decimals);
-
+    if (isNaN(totalSupply) || totalSupply <0 || totalSupply > 1e18)
     if (isNaN(parsedDecimals) || parsedDecimals < 0 || parsedDecimals > 18) {
       console.error("Error: Invalid decimals value. Decimals must be a number between 0 and 18.");
       return;
